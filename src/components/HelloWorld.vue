@@ -1,6 +1,8 @@
 <template>
-  <div class="hello">
+  <div class="hello ">
     <h1>{{ msg }}</h1>
+    <input type="text" v-model="msgS" />
+    <h2 class="green">{{ sayHelloToPeople() }}</h2>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -108,6 +110,20 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string;
+  created() {
+    setTimeout(() => {
+      console.log("created");
+    }, 1000);
+  }
+  mounted() {
+    setTimeout(() => {
+      console.log("mounted");
+    }, 1000);
+  }
+  msgS = "徐狗";
+  sayHelloToPeople() {
+    return "say hello to " + this.msgS;
+  }
 }
 </script>
 
@@ -126,5 +142,9 @@ li {
 }
 a {
   color: #42b983;
+}
+.green {
+  background: green;
+  color: #fff;
 }
 </style>
