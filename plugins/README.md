@@ -1,5 +1,5 @@
 # 插件
-`
+```
 export default {
   //修改vite的配置
   config() {},
@@ -19,4 +19,4 @@ export default {
   //自定义HMR更新时调用
   handleHotUpdate() {},
 };
-`
+```
