@@ -1,3 +1,5 @@
+# 插件
+`
 export default {
   //修改vite的配置
   config() {},
@@ -13,14 +15,8 @@ export default {
   load() {},
   //用于转换已加载的模块内容
   transform(code, id) {
-    console.log("code", code, "id", id);
-    if (/vue&type=i18n/.test(id)) {
-      return `export default Comp =>{
-        Comp.i18n = ${code}
-      }`;
-    }
-    return null;
   },
   //自定义HMR更新时调用
   handleHotUpdate() {},
 };
+`
